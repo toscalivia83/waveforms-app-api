@@ -5,7 +5,6 @@ const appConfig = require('../config/appConfig.js');
 const LOG = require("../utils/logger");
 
 let client;
-let db;
 
 // Connect to DB
 module.exports.connect = function(mongoUrl) {
@@ -28,8 +27,7 @@ module.exports.init = function(mongoUrl) {
   return MongoClient.connect(mongoUrl, { useUnifiedTopology: true, useNewUrlParser: true })
     .then(function(newClientInstance) {
       client = newClientInstance;
-      db = client.db(appConfig.mongo.dbName);
-      return client;
+      return client.db(appConfig.mongo.dbName);
     })
     .catch(function(error) {
       LOG.logError(new VError('Failed to connect to DB'));

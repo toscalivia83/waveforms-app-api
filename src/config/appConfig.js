@@ -27,7 +27,7 @@ const config = {
 
 // Loads the correct app-configuration file, based on environment variable
 try {
-  require(appConfigFilename)(config); // eslint-disable-line global-require, import/no-dynamic-require
+  require(appConfigFilename)(config); // eslint-disable-line global-require
   module.exports = config;
 } catch (e) {
   console.error('Error at initialisation of app. Missing or invalid APP_CONFIG environment variable: ', process.env.APP_CONFIG);

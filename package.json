@@ -17,7 +17,8 @@
     "winston": "^3.2.1"
   },
   "scripts": {
-    "start-server": "NODE_ENV=development node ./app.js --listen 5000 --no-clipboard records"
+    "start-server": "NODE_ENV=development node ./app.js --listen 5000 --no-clipboard records",
+    "lint": "eslint ./src"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -33,5 +34,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint": "^7.0.0"
   }
 }
