@@ -1,0 +1,37 @@
+{
+  "name": "feebris-app-server",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "http": "0.0.1-security",
+    "https": "^1.0.0",
+    "jsonfile": "^6.0.1",
+    "mongodb": "^3.5.7",
+    "mongoose": "^5.9.11",
+    "verror": "^1.10.0",
+    "winston": "^3.2.1"
+  },
+  "scripts": {
+    "start-server": "NODE_ENV=development node ./app.js --listen 5000 --no-clipboard records"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
