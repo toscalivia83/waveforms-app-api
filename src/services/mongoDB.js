@@ -18,6 +18,9 @@ module.exports.connect = function(mongoUrl) {
     })
     .on('reconnected', function() {
       LOG.logRequest(`Mongoose re-connected to DB ${mongoUrl}`);
+    })
+    .on('close', function() {
+      LOG.logRequest(`Mongoose closing to DB ${mongoUrl}`);
     });
   mongoose.connect(mongoUrl, {useNewUrlParser: true, useUnifiedTopology: true});
 };
@@ -33,4 +36,11 @@ module.exports.init = function(mongoUrl) {
       LOG.logError(new VError('Failed to connect to DB'));
       return new VError(error, 'Failed to connect to DB');
     });
+};
+
+module.exports.dropDatabase = function(collection) {
+  mongoose.connection.dropDatabase();
+};
+module.exports.close = function() {
+  mongoose.connection.close();
 };

@@ -1,9 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const VError = require('verror');
 const path = require('path');
 const appConfig = require('./config/appConfig.js');
-const StethoscopeRecord = require('./models/stethoscopeRecord.js');
 const globby = require('globby');
 const app = express();
 const port = process.env.PORT || 5000;
@@ -11,11 +9,13 @@ const port = process.env.PORT || 5000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Database setup: mongoose
-require('./services/mongoDB.js').connect(appConfig.mongo.url);
+if (process.env.APP_CONFIG !== "tests") {
+  // Database setup: mongoose
+  require('./services/mongoDB.js').connect(appConfig.mongo.url);
 
-// Database setup: direct mongo client
-require('./services/mongoDB.js').init(appConfig.mongo.url);
+  // Database setup: direct mongo client
+  require('./services/mongoDB.js').init(appConfig.mongo.url);
+}
 
 // Include all routes in directory
 globby
@@ -23,4 +23,10 @@ globby
   // eslint-disable-next-line global-require
   .forEach(f => require(path.resolve(__dirname, f))(app));
 
-app.listen(port, () => console.log(`Listening on port ${port}`));
+var server = app.listen(port, function () {
+  var port = server.address().port;
+
+  console.log(`App listening at ${port}`);
+});
+
+module.exports = server

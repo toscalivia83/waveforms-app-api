@@ -1,0 +1,24 @@
+[{
+  "_id":"5eafeff98e3b407f03720bc3",
+  "numberOfBreaths":90,
+  "hasHeartBeats":false,
+  "audioUrl":"https://storage.googleapis.com/annotation_tool_feebris/lung_sound_1.wav"
+},
+{
+  "_id":"5eaff15c0ad10c8132e52c76",
+  "numberOfBreaths":80,
+  "hasHeartBeats":false,
+  "audioUrl":"https://storage.googleapis.com/annotation_tool_feebris/lung_sound_1.wav"
+},
+{
+  "_id":"5eaff1600ad10c8132e52c77",
+  "numberOfBreaths":70,
+  "hasHeartBeats":false,
+  "audioUrl":"https://storage.googleapis.com/annotation_tool_feebris/lung_sound_2.wav"
+},
+{
+  "_id":"5eaff4530ad10c8132e52c78",
+  "numberOfBreaths":60,
+  "hasHeartBeats":false,
+  "audioUrl":"https://storage.googleapis.com/annotation_tool_feebris/lung_sound_1.wav"
+}]
