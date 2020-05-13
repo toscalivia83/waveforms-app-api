@@ -10,7 +10,7 @@ describe('Endpoints work correctly', () => {
   before(async () => {
     await mongoDB.connect(appConfig.mongo.url)
     await mongoDB.dropDatabase("stethoscoperecord");
-    await StethoscopeRecord.create (testData);
+    await StethoscopeRecord.create(testData);
   });
 
   it('should get audio annotations', async () => {

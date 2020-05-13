@@ -38,7 +38,7 @@ module.exports.init = function(mongoUrl) {
     });
 };
 
-module.exports.dropDatabase = function(collection) {
+module.exports.dropDatabase = function() {
   mongoose.connection.dropDatabase();
 };
 module.exports.close = function() {
