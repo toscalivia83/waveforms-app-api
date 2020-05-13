@@ -18,7 +18,7 @@ To look at what is inside your database in dev
 
 
 ## Improvements
-- [ ] Export the get and post from NodeJs to a routes folder
+- [x] Export the get and post from NodeJs to a routes folder
 - [ ] Add more tests
 - [ ] Add express cookie
 - [ ] Could generate the .dat from the .wav file in Nodejs and save it on the cloud, then use it in the FE, instead of saving them in the public folder.

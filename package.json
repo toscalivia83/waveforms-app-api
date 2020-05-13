@@ -8,11 +8,13 @@
     "enzyme-adapter-react-16": "^1.15.2",
     "express": "^4.17.1",
     "fs": "0.0.1-security",
+    "globby": "^11.0.0",
     "http": "0.0.1-security",
     "https": "^1.0.0",
     "jsonfile": "^6.0.1",
     "mongodb": "^3.5.7",
     "mongoose": "^5.9.11",
+    "path": "^0.12.7",
     "verror": "^1.10.0",
     "winston": "^3.2.1"
   },
