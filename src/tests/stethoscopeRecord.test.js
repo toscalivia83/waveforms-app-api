@@ -13,11 +13,6 @@ describe('Endpoints work correctly', () => {
     await StethoscopeRecord.create(testData);
   });
 
-  it('should get audio annotations', async () => {
-    const stethoscopeRecords = await StethoscopeRecord.find()
-    expect(stethoscopeRecords.length).to.equal(4)
-  })
-
   it('should get audio annotations from route', (done) => {
     request(app)
     .get('/audio-annotations')
@@ -26,6 +21,23 @@ describe('Endpoints work correctly', () => {
     .end(function(err, res){
       if (err) return done(err);
       expect(res.body.audioAnnotations.length).to.equal(4);
+      done();
+    });
+  })
+
+  it('should post audio annotations from route', (done) => {
+    request(app)
+    .post('/audio-annotations')
+    .send({
+      audioUrl: "/test-url",
+      numberOfBreaths: 25,
+      hasHeartBeats: true
+    })
+    .set('Accept', 'application/json')
+    .expect(200)
+    .end(function(err, res){
+      if (err) return done(err);
+      expect(res.text).to.equal("sent");
       done();
     });
   })
